@@ -86,7 +86,7 @@ function App() {
             <span className="hidden sm:flex items-center gap-1"><MapPin className="w-3 h-3" /> Deliver to Jodhpur, RJ 342001</span>
             <span className="flex items-center gap-1"><Phone className="w-3 h-3" /> +91 9876543210</span>
           </div>
-          <span className="hidden md:block">Free delivery on orders above ₹500 🚚</span>
+          <span className="hidden md:block">Free delivery on orders above ₹400 🚚</span>
         </div>
       </div>
 
