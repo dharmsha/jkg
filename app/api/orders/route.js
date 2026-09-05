@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 // WhatsApp number (without +)
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '917070853636';
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '917070853444';
 
 function generateWhatsAppMessage(order) {
   const itemsList = order.items.map((item, index) => 
@@ -90,7 +90,9 @@ export async function POST(request) {
     // Generate WhatsApp message
     const message = generateWhatsAppMessage(order);
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    
+    // ✅ UPDATED: API WhatsApp link (more reliable)
+    const whatsappUrl = `https://api.whatsapp.com/send/?phone=${WHATSAPP_NUMBER}&text=${encodedMessage}&type=phone_number&app_absent=0`;
 
     console.log('✅ Order processed:', order.orderId);
     console.log('📱 WhatsApp URL:', whatsappUrl);
